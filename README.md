@@ -1,2 +1,58 @@
 # Hospital-Readmission-Risk-Analysis
 Identify key drivers of 30-day hospital readmissions and segment high-risk patient profiles to reduce avoidable readmissions.
+
+
+## Executive Summary:
+
+Reducing avoidable 30-day readmissions is one of the most direct levers we have to improve patient outcomes and protect the hospital from CMS financial penalties. Our analysis of over 100,000 patient encounters across our hospital network pinpoints exactly which patients are driving that risk and what we can do about it. Patients with 5 or more prior inpatient visits are nearly 4x more likely to be readmitted, and our diabetic patients carry an elevated readmission rate of 13% compared to our 11% baseline. Patients with heart-related conditions represent our largest patient group at over 30,000 encounters, making them a high priority target by volume alone. The following sections outline the key findings and actionable recommendations on how to identify and intervene on our highest-risk patients.
+
+### Business Problem:
+
+Hospital readmissions are costly and often preventable. Reducing avoidable 30-day readmissions improves patient outcomes and helps the hospital avoid CMS financial penalties. What are the primary factors driving readmissions, and which high-risk patient profiles can be targeted for earlier intervention?
+
+
+## Dataset Overview & Data Checks:
+
+Our dataset includes over 100,000 hospital encounters for diabetic patients across 130 U.S. hospitals spanning 1999–2008. Each row represents a single hospital visit and includes patient demographics, diagnoses, hospital utilization, and medications.
+Initial checks were performed in Excel, where columns like weight (too many missing values) and Encounter ID (identifier only) were removed.
+The data was then cleaned in SQL by:
+
+* Replacing '?' values with NULL
+* Standardizing key categorical fields (e.g., gender, medical specialty)
+* Truncating ICD-9 diagnosis codes to 3-digit categories for easier analysis
+* Removing columns with no variation (examide, citoglipton)
+* Creating a binary readmission field (readmit_30) using a temporary table
+
+SQL queries can be found [here] 
+
+## Key findings 
+
+### Patient Demographics:
+* Readmission rates are relatively consistent across age groups, but patients 50 and older account for 85% of all 30-day readmissions (9,627 of 11,357), making them the highest priority target simply due to volume.
+  
+* Gender readmission rates are nearly identical across male (11.06%) and female (11.25%) patients, indicating gender is not a meaningful driver of 30-day readmission risk in this dataset.
+  
+* Race readmission rates show minimal variation across racial groups (9.63%–11.29%), indicating race is not a meaningful driver of readmission risk in this dataset.
+
+### Hospital Utilization:
+* Emergency visit rates nearly double from 10% to 25% as visit frequency rises, making it one of the strongest drivers of 30-day readmission risk alongside prior inpatient history.
+  
+* Prior inpatient visits show the steepest risk escalation, climbing from 8.4% to 36.4% as hospitalizations increase. Patients with 5+ prior visits are over 4x more likely to be readmitted within 30 days.
+  
+* Length of stay shows a clear step-up in readmission risk after 3 days, rising from 9.7% to 13.5%, suggesting longer stays reflect greater clinical complexity rather than better care.
+  
+* Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
+
+  ### Clinical Indicators:
+
+* When looking at number of medications across patients, those on 16 or more medications have a readmission rate of 12.48% compared to 7.48% for those on 5 or fewer. Nearly half the dataset falls in the highest bucket suggesting high medication burden is a reliable proxy for clinical complexity and readmission risk.
+  
+* By primary diagnosis of the patient, diabetes carries the highest readmission rate at 12.98%, while circulatory conditions represent the largest patient volume at 30,389 encounters — making cardiac and diabetic patients the highest priority targets for intervention. Diabetes also appears as a secondary or tertiary diagnosis in nearly 30,000 additional encounters, confirming it as a pervasive comorbidity across the dataset.
+  
+* Patients with insulin dosage adjustments show elevated readmission rates — downward adjustments at 13.90% and upward at 12.99% — compared to 10.04% for patients on no insulin, suggesting active dose changes signal clinical instability and higher readmission risk.
+
+
+
+
+
+
