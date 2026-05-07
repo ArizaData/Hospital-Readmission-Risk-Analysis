@@ -28,21 +28,21 @@ SQL queries can be found [here]
 
 ### Patient Demographics:
 
-* Readmission rates are relatively consistent across age groups, but patients 50 and older account for 85% of all 30-day readmissions (9,627 of 11,357), making them the highest priority target simply due to volume.
+* Readmission rates are relatively consistent across age groups, but **patients 50 and older account for 85% of all 30-day readmissions** (9,627 of 11,357), making them the highest priority target simply due to volume.
   
 * Gender readmission rates are nearly identical across male (11.06%) and female (11.25%) patients, indicating gender is not a meaningful driver of 30-day readmission risk in this dataset.
   
 * Race readmission rates show minimal variation across racial groups (9.63%–11.29%), indicating race is not a meaningful driver of readmission risk in this dataset.
 
-<img width="918" height="643" alt="image" src="https://github.com/user-attachments/assets/01964458-effe-4561-9b9d-ca8a4e7cd1a6" />
+<img width="818" height="543" alt="image" src="https://github.com/user-attachments/assets/01964458-effe-4561-9b9d-ca8a4e7cd1a6" />
 
 ### Hospital Utilization:
 
-* Emergency visit rates nearly double from 10% to 25% as visit frequency rises, making it one of the strongest drivers of 30-day readmission risk alongside prior inpatient history.
+* Emergency visit rates nearly **double from 10% to 25% as visit frequency rises**, making it one of the strongest drivers of 30-day readmission risk alongside prior inpatient history.
   
-* Prior inpatient visits show the steepest risk escalation, climbing from 8.4% to 36.4% as hospitalizations increase. Patients with 5+ prior visits are over 4x more likely to be readmitted within 30 days.
+* Prior inpatient visits show the steepest risk escalation, **climbing from 8.4% to 36.4%** as hospitalizations increase. Patients with 5+ prior visits are over 4x more likely to be readmitted within 30 days.
   
-* Length of stay shows a clear step-up in readmission risk after 3 days, rising from 9.7% to 13.5%, suggesting longer stays reflect greater clinical complexity rather than better care.
+* Length of stay shows a clear step-up in readmission risk after 3 days, **rising from 9.7% to 13.5%**, suggesting longer stays reflect greater clinical complexity rather than better care.
   
 * Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
 
@@ -51,24 +51,24 @@ SQL queries can be found [here]
 
 ### Clinical Indicators:
 
-* When looking at number of medications across patients, those on 16 or more medications have a readmission rate of 12.48% compared to 7.48% for those on 5 or fewer. Nearly half the dataset falls in the highest bucket suggesting high medication burden is a reliable proxy for clinical complexity and readmission risk.
+* When looking at number of medications across patients, those on 16 or more medications have a readmission rate of **12.48%** compared to 7.48% for those on 5 or fewer. Nearly half the dataset falls in the highest bucket suggesting high medication burden is a reliable proxy for clinical complexity and readmission risk.
   
-* By primary diagnosis of the patient, diabetes carries the highest readmission rate at 12.98%, while circulatory conditions represent the largest patient volume at 30,389 encounters — making cardiac and diabetic patients the highest priority targets for intervention. Diabetes also appears as a secondary or tertiary diagnosis in nearly 30,000 additional encounters, confirming it as a pervasive comorbidity across the dataset.
+* By primary diagnosis of the patient, diabetes carries the highest readmission rate at **12.98%**, while circulatory conditions represent the largest patient volume at **30,389** encounters, making cardiac and diabetic patients the highest priority targets for intervention. Diabetes also appears as a secondary or tertiary diagnosis in nearly 30,000 additional encounters, confirming it as a pervasive comorbidity across the dataset.
   
-* Patients with insulin dosage adjustments show elevated readmission rates. Downward adjustments carry the highest rate at 13.90% and upward adjustments at 12.99%, compared to 10.04% for patients on no insulin. Active dose changes during a hospital stay signal clinical instability and higher readmission risk.
+* Patients with insulin dosage adjustments show elevated readmission rates. Downward adjustments carry the highest rate at **13.90%** and upward adjustments at **12.99%**, compared to 10.04% for patients on no insulin. Active dose changes during a hospital stay signal clinical instability and higher readmission risk.
   
 <img width="1288" height="615" alt="image" src="https://github.com/user-attachments/assets/f9c08634-1608-4131-b7e9-01c9384bd208" />
 
 ## Recommendations:
-* Establish an automatic care coordination trigger for patients with repeat inpatient history. With patients carrying 5 or more prior inpatient visits being over 4x more likely to be readmitted, assigning a dedicated care coordinator at intake — rather than at discharge — gives clinical teams more time to build a structured transition plan before the patient leaves the building.
+* **Establish an automatic care coordination trigger for patients with repeat inpatient history.** With patients carrying 5 or more prior inpatient visits being over 4x more likely to be readmitted, assigning a dedicated care coordinator at intake — rather than at discharge — gives clinical teams more time to build a structured transition plan before the patient leaves the building.
   
-* Introduce a high-frequency emergency visitor protocol at intake. Readmission rates nearly double from 10% to 25% as emergency visit frequency rises, yet intervention typically happens at discharge when it's too late. Flagging patients with 2 or more prior emergency visits on arrival allows care teams to begin discharge planning from day one.
+* **Introduce a high-frequency emergency visitor protocol at intake.** Readmission rates nearly double from 10% to 25% as emergency visit frequency rises, yet intervention typically happens at discharge when it's too late. Flagging patients with 2 or more prior emergency visits on arrival allows care teams to begin discharge planning from day one.
   
-* Target cardiac and diabetic comorbidity patients for coordinated care from day one of admission. Circulatory conditions represent the largest patient group at 30,389 encounters and diabetes carries the highest readmission rate at 12.98% — patients presenting with both face compounding risk. Embedding a care coordinator into rounds for this profile rather than consulting one at discharge would meaningfully reduce avoidable readmissions in the highest volume segment.
+* **Target cardiac and diabetic comorbidity patients for coordinated care from day one of admission.** Circulatory conditions represent the largest patient group at 30,389 encounters and diabetes carries the highest readmission rate at 12.98% — patients presenting with both face compounding risk. Embedding a care coordinator into rounds for this profile rather than consulting one at discharge would meaningfully reduce avoidable readmissions in the highest volume segment.
   
-* Deploy pharmacist-led medication reconciliation for all patients on 16 or more medications before discharge. Nearly half the dataset falls in this high-burden bucket at a 12.48% readmission rate. A structured review identifying conflicting or redundant medications before the patient goes home reduces the risk of post-discharge complications driving avoidable returns.
+* **Deploy pharmacist-led medication reconciliation for all patients on 16 or more medications before discharge.** Nearly half the dataset falls in this high-burden bucket at a 12.48% readmission rate. A structured review identifying conflicting or redundant medications before the patient goes home reduces the risk of post-discharge complications driving avoidable returns.
   
-* Require clinical sign-off on glucose stability before discharging any patient whose insulin was adjusted downward. Patients with downward insulin adjustments carry the highest readmission rate in the dataset at 13.90%, suggesting premature discharge before glucose is stabilized. A mandatory endocrinologist review before discharge for this patient group would directly address this gap.
+* **Require clinical sign-off on glucose stability before discharging any patient whose insulin was adjusted downward.** Patients with downward insulin adjustments carry the highest readmission rate in the dataset at 13.90%, suggesting premature discharge before glucose is stabilized. A mandatory endocrinologist review before discharge for this patient group would directly address this gap.
 
 ## Caveats & Assumptions: 
 
