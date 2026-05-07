@@ -47,7 +47,7 @@ SQL queries can be found [here]
 * Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
 
  <img width="1299" height="645" alt="Screenshot 2026-05-06 173603" src="https://github.com/user-attachments/assets/22e5b1c4-6090-45d0-9504-d8a48a874b79" />
-
+   *Dashed line represents the dataset average readmission rate of 11.16%* 
 
 ### Clinical Indicators:
 
@@ -69,6 +69,18 @@ SQL queries can be found [here]
 * Deploy pharmacist-led medication reconciliation for all patients on 16 or more medications before discharge. Nearly half the dataset falls in this high-burden bucket at a 12.48% readmission rate. A structured review identifying conflicting or redundant medications before the patient goes home reduces the risk of post-discharge complications driving avoidable returns.
   
 * Require clinical sign-off on glucose stability before discharging any patient whose insulin was adjusted downward. Patients with downward insulin adjustments carry the highest readmission rate in the dataset at 13.90%, suggesting premature discharge before glucose is stabilized. A mandatory endocrinologist review before discharge for this patient group would directly address this gap.
+
+## Caveats & Assumptions: 
+
+* Dataset spans 1999–2008 and may not fully reflect current clinical practices or hospital protocols.
+
+* Each row represents a unique hospital encounter. Patients with multiple visits appear more than once in the dataset.
+
+* Readmission was defined as any return within 30 days regardless of reason.
+
+* ICD-9 codes were truncated to 3-digit categories, grouping related but clinically distinct conditions together.
+
+* Several columns were available but excluded from analysis due to low analytical value, including payer code, medical specialty, and individual medication types beyond insulin.
 
 
 
