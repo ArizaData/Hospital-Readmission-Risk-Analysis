@@ -1,5 +1,4 @@
 # Hospital-Readmission-Risk-Analysis
-Identify key drivers of 30-day hospital readmissions and segment high-risk patient profiles to reduce avoidable readmissions.
 
 
 ## Executive Summary:
@@ -10,8 +9,8 @@ Reducing avoidable 30-day readmissions is one of the most direct levers we have 
 
 Hospital readmissions are costly and often preventable. Reducing avoidable 30-day readmissions improves patient outcomes and helps the hospital avoid CMS financial penalties. What are the primary factors driving readmissions, and which high-risk patient profiles can be targeted for earlier intervention?
 
-
 ## Dataset Overview & Data Checks:
+Tools Used: SQL (MySQL), Excel, Power BI
 
 Our dataset includes over 100,000 hospital encounters for diabetic patients across 130 U.S. hospitals spanning 1999–2008. Each row represents a single hospital visit and includes patient demographics, diagnoses, hospital utilization, and medications.
 Initial checks were performed in Excel, where columns like weight (too many missing values) and Encounter ID (identifier only) were removed.
@@ -35,6 +34,8 @@ SQL queries can be found [here]
   
 * Race readmission rates show minimal variation across racial groups (9.63%–11.29%), indicating race is not a meaningful driver of readmission risk in this dataset.
 
+<img width="918" height="643" alt="image" src="https://github.com/user-attachments/assets/01964458-effe-4561-9b9d-ca8a4e7cd1a6" />
+
 ### Hospital Utilization:
 
 * Emergency visit rates nearly double from 10% to 25% as visit frequency rises, making it one of the strongest drivers of 30-day readmission risk alongside prior inpatient history.
@@ -45,13 +46,18 @@ SQL queries can be found [here]
   
 * Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
 
-  ### Clinical Indicators:
+ <img width="1299" height="645" alt="Screenshot 2026-05-06 173603" src="https://github.com/user-attachments/assets/22e5b1c4-6090-45d0-9504-d8a48a874b79" />
+
+
+### Clinical Indicators:
 
 * When looking at number of medications across patients, those on 16 or more medications have a readmission rate of 12.48% compared to 7.48% for those on 5 or fewer. Nearly half the dataset falls in the highest bucket suggesting high medication burden is a reliable proxy for clinical complexity and readmission risk.
   
 * By primary diagnosis of the patient, diabetes carries the highest readmission rate at 12.98%, while circulatory conditions represent the largest patient volume at 30,389 encounters — making cardiac and diabetic patients the highest priority targets for intervention. Diabetes also appears as a secondary or tertiary diagnosis in nearly 30,000 additional encounters, confirming it as a pervasive comorbidity across the dataset.
   
-* Patients with insulin dosage adjustments show elevated readmission rates — downward adjustments at 13.90% and upward at 12.99% — compared to 10.04% for patients on no insulin, suggesting active dose changes signal clinical instability and higher readmission risk.
+* Patients with insulin dosage adjustments show elevated readmission rates. Downward adjustments carry the highest rate at 13.90% and upward adjustments at 12.99%, compared to 10.04% for patients on no insulin. Active dose changes during a hospital stay signal clinical instability and higher readmission risk.
+  
+<img width="1288" height="615" alt="image" src="https://github.com/user-attachments/assets/f9c08634-1608-4131-b7e9-01c9384bd208" />
 
 ## Recommendations:
 * Establish an automatic care coordination trigger for patients with repeat inpatient history. With patients carrying 5 or more prior inpatient visits being over 4x more likely to be readmitted, assigning a dedicated care coordinator at intake — rather than at discharge — gives clinical teams more time to build a structured transition plan before the patient leaves the building.
