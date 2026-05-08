@@ -35,7 +35,9 @@ Analysis Process:
 3. Risk Bucketing: Used SQL to bin continuous data into categories (e.g., visits grouped as 0, 1-4, or 5+). This revealed that certain "high-utilizer" segments carry nearly 4x the average risk.
 
 4. Data Storytelling & Visualization: Imported the final SQL segments into Power BI to generate targeted charts. This step was used to translate the raw numbers into a visual narrative that highlights which patient profiles require the most urgent clinical intervention.
-SQL queries can be found [here]
+
+SQL queries can be found [here](sql/readmission_risk_analysis.sql)
+
 ## Key findings 
 
 ### Patient Demographics:
