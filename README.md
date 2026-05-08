@@ -77,11 +77,11 @@ SQL queries can be found [here](sql/readmission_risk_analysis.sql)
 <img width="1288" height="615" alt="image" src="https://github.com/user-attachments/assets/f9c08634-1608-4131-b7e9-01c9384bd208" />
 
 ## Recommendations:
-* **Establish an automatic care coordination trigger for patients with repeat inpatient history.** With patients carrying 5 or more prior inpatient visits being over 4x more likely to be readmitted, assigning a dedicated care coordinator at intake — rather than at discharge — gives clinical teams more time to build a structured transition plan before the patient leaves the building.
+* **Establish an automatic care coordination trigger for patients with repeat inpatient history.** With patients carrying 5 or more prior inpatient visits being over 4x more likely to be readmitted, assigning a dedicated care coordinator at intake rather than at discharge gives clinical teams more time to build a structured transition plan before the patient leaves the building.
   
 * **Introduce a high-frequency emergency visitor protocol at intake.** Readmission rates nearly double from 10% to 25% as emergency visit frequency rises, yet intervention typically happens at discharge when it's too late. Flagging patients with 2 or more prior emergency visits on arrival allows care teams to begin discharge planning from day one.
   
-* **Target cardiac and diabetic comorbidity patients for coordinated care from day one of admission.** Circulatory conditions represent the largest patient group at 30,389 encounters and diabetes carries the highest readmission rate at 12.98% — patients presenting with both face compounding risk. Embedding a care coordinator into rounds for this profile rather than consulting one at discharge would meaningfully reduce avoidable readmissions in the highest volume segment.
+* **Target cardiac and diabetic comorbidity patients for coordinated care from day one of admission.** Circulatory conditions represent the largest patient group at 30,389 encounters and diabetes carries the highest readmission rate at 12.98%. Given that patients presenting with both face compounding risk, embedding a care coordinator into rounds for this profile rather than consulting one at discharge would meaningfully reduce avoidable readmissions in this high-volume segment.
   
 * **Deploy pharmacist-led medication reconciliation for all patients on 16 or more medications before discharge.** Nearly half the dataset falls in this high-burden bucket at a 12.48% readmission rate. A structured review identifying conflicting or redundant medications before the patient goes home reduces the risk of post-discharge complications driving avoidable returns.
   
