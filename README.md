@@ -57,11 +57,11 @@ SQL queries can be found [here](sql/readmission_risk_analysis.sql)
 
 * Emergency visit rates nearly **double from 10% to 25% as visit frequency rises**, making it one of the strongest drivers of 30-day readmission risk alongside prior inpatient history.
   
-* Prior inpatient visits show the steepest risk escalation, **climbing from 8.4% to 36.4%** as hospitalizations increase. Patients with 5+ prior visits are over 4x more likely to be readmitted within 30 days.
+* Prior inpatient visits show the steepest risk escalation, **climbing from 8.4% to 36.4%** as hospitalizations increase. Patients with 5+ prior visits are over **4x more likely** to be readmitted within 30 days.
   
 * Length of stay shows a clear step-up in readmission risk after 3 days, **rising from 9.7% to 13.5%**, suggesting longer stays reflect greater clinical complexity rather than better care.
   
-* Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
+* Outpatient visits show a weak and inconsistent signal, with rates ticking up from **10.7% to 13%** before plateauing, making it the least reliable predictor of the four utilization variables.
 
  <img width="1299" height="645" alt="Screenshot 2026-05-06 173603" src="https://github.com/user-attachments/assets/22e5b1c4-6090-45d0-9504-d8a48a874b79" />
 
