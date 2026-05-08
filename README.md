@@ -22,7 +22,7 @@ The data was then cleaned in SQL by:
 * Removing columns with no variation (examide, citoglipton)
 * Creating a binary readmission field (readmit_30) using a temporary table
 
-SQL queries can be found [here] (sql/data_cleaning.sql)
+SQL queries can be found [here](sql/data_cleaning.sql)
 
 ## Key findings 
 
