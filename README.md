@@ -24,6 +24,18 @@ The data was then cleaned in SQL by:
 
 SQL queries can be found [here](sql/data_cleaning.sql)
 
+## Analysis Methodology
+find the highest-risk patient profiles, the analysis moved from initial data cleaning into deep exploration and segmentation. By breaking the data down by demographics, clinical markers, and hospital history, I was able to identify the specific "inflection points" where a patient's risk of returning within 30 days significantly increases.
+
+Analysis Process:
+1. Exploratory Data Analysis (EDA): Investigated the raw distribution of over 100,000 encounters to understand the relationships between patient age, medication burden, and the dataset's baseline readmission rate of 11.16%.
+
+2. Multi-Dimensional Segmentation: Grouped data by patient demographics (Age, Gender, Race), clinical indicators (Diagnosis type, insulin changes), and hospital utilization (Prior inpatient and emergency visits).
+
+3. Risk Bucketing: Used SQL to bin continuous data into categories (e.g., visits grouped as 0, 1-4, or 5+). This revealed that certain "high-utilizer" segments carry nearly 4x the average risk.
+
+4. Data Storytelling & Visualization: Imported the final SQL segments into Power BI to generate targeted charts. This step was used to translate the raw numbers into a visual narrative that highlights which patient profiles require the most urgent clinical intervention.
+SQL queries can be found [here]
 ## Key findings 
 
 ### Patient Demographics:
