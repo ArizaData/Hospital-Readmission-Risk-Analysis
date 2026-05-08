@@ -3,14 +3,15 @@
 
 ## Executive Summary:
 
-Reducing avoidable 30-day readmissions is one of the most direct levers we have to improve patient outcomes and protect the hospital from CMS financial penalties. Our analysis of over 100,000 patient encounters across our hospital network pinpoints exactly which patients are driving that risk and what we can do about it. Patients with 5 or more prior inpatient visits are nearly 4x more likely to be readmitted, and our diabetic patients carry an elevated readmission rate of 13% compared to our 11% baseline. Patients with heart-related conditions represent our largest patient group at over 30,000 encounters, making them a high priority target by volume alone. The following sections outline the key findings and actionable recommendations on how to identify and intervene on our highest-risk patients.
+Reducing avoidable 30-day readmissions is one of the most direct levers we have to improve patient outcomes and protect the hospital from CMS financial penalties. Our analysis of over 100,000 patient encounters across our hospital network pinpoints exactly which patients are driving that risk and what we can do about it. Patients with 5 or more prior inpatient visits are nearly 4x more likely to be readmitted, and our diabetic patients carry an elevated readmission rate of 13% compared to our 11% baseline. Patients with heart-related conditions represent our largest patient group at over 30,000 encounters, making them a high priority target by volume alone. 
+
+The following sections outline the key findings and actionable recommendations on how to identify and intervene on our highest-risk patients.
 
 ## Business Problem:
 
 Hospital readmissions are costly and often preventable. Reducing avoidable 30-day readmissions improves patient outcomes and helps the hospital avoid CMS financial penalties. What are the primary factors driving readmissions, and which high-risk patient profiles can be targeted for earlier intervention?
 
 ## Dataset Overview & Data Checks:
-Tools Used: SQL (MySQL), Excel, Power BI
 
 Our dataset includes over 100,000 hospital encounters for diabetic patients across 130 U.S. hospitals spanning 1999–2008. Each row represents a single hospital visit and includes patient demographics, diagnoses, hospital utilization, and medications.
 Initial checks were performed in Excel, where columns like weight (too many missing values) and Encounter ID (identifier only) were removed.
@@ -27,7 +28,9 @@ SQL queries can be found [here](sql/data_cleaning.sql)
 ## Analysis Methodology
 The analysis moved from initial data cleaning into deep exploration and segmentation. By breaking the data down by demographics, clinical markers, and hospital history, I was able to identify the specific "inflection points" where a patient's risk of returning within 30 days significantly increases.
 
-Analysis Process:
+Tools Used: SQL (MySQL), Excel, Power BI
+
+### Analysis Process:
 1. Exploratory Data Analysis (EDA): Investigated the raw distribution of over 100,000 encounters to understand the relationships between patient age, medication burden, and the dataset's baseline readmission rate of 11.16%.
 
 2. Multi-Dimensional Segmentation: Grouped data by patient demographics (Age, Gender, Race), clinical indicators (Diagnosis type, insulin changes), and hospital utilization (Prior inpatient and emergency visits).
