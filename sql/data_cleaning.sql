@@ -53,3 +53,10 @@ SET readmitted = REPLACE(REPLACE(readmitted, CHAR(13), ''), CHAR(10), '');
 ALTER TABLE diabetic_data
 DROP COLUMN examide,
 DROP COLUMN citoglipton;
+
+-- temp table to create readmisson binary feature
+
+CREATE TEMPORARY TABLE temp_readmit AS
+SELECT *,
+       CASE WHEN readmitted = '<30' THEN 1 ELSE 0 END AS readmit_30
+FROM diabetic_data;
