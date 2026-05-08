@@ -64,7 +64,8 @@ SQL queries can be found [here](sql/readmission_risk_analysis.sql)
 * Outpatient visits show a weak and inconsistent signal, with rates ticking up from 10.7% to 13% before plateauing, making it the least reliable predictor of the four utilization variables.
 
  <img width="1299" height="645" alt="Screenshot 2026-05-06 173603" src="https://github.com/user-attachments/assets/22e5b1c4-6090-45d0-9504-d8a48a874b79" />
-   *Dashed line represents the dataset average readmission rate of 11.16%* 
+
+ > *Dashed line represents the dataset average readmission rate of 11.16%*  
 
 ### Clinical Indicators:
 
